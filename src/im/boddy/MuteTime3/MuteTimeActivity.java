@@ -10,7 +10,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import java.util.*;
-import android.widget.Toast;
+import android.widget.*;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import static java.util.Calendar.*;
@@ -24,6 +24,16 @@ public class MuteTimeActivity extends Activity
 		{
 				super.onCreate(savedInstanceState);
 				setContentView(R.layout.main);
+
+				Switch switchButton = (Switch) findViewById(R.id.switchButton);
+				TimePicker timePicker = (TimePicker) findViewById(R.id.timePicker);
+				Spinner spinner = (Spinner) findViewById(R.id.timeFrequencySpinner);
+
+				timePicker.setIs24HourView(true);
+				//toggle
+				// set mute/unmute
+				
+				/*
 				Calendar cal = Calendar.getInstance();
 				cal.set(SECOND, 0);
                 int curMin = cal.get(MINUTE);
@@ -41,6 +51,17 @@ public class MuteTimeActivity extends Activity
 				Date unmuteTime = cal.getTime();
 	 
 				scheduleAlarms(muteTime, unmuteTime);
+				*/
+		}
+		
+		public static Date getTime(TimePicker timePicker) {
+				Calendar cal = Calendar.getInstance();
+				int hour = timePicker.getHour();
+				int minute = timePicker.getMinute();
+				cal.set(SECOND, 0);
+				cal.set(MINUTE, minute);
+				cal.set(HOUR, hour);
+				return cal.getTime();
 		}
 
 		public void scheduleAlarms(Date  muteTime, Date unmuteTime) {
