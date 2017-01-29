@@ -2,9 +2,9 @@
 <resources>
         <string name="app_name">mute-time</string>
         <string-array name="time_freq_array">
-                <item>None</item>
                 <item>Hourly</item>
                 <item>Daily</item>
+                <item>None</item>
         </string-array>
        <string name="time_freq_prompt">Mute recurrency-frequency</string>
         <string-array name="time_duration_array">

@@ -12,7 +12,6 @@ import java.util.Date;
 public class MuteReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
-        Log.i("mute-receiver-tag", "Entering  mute-receiver!.");
         AudioManager audioManager = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
         //set stream music volune to zero
         Toast.makeText(context, "Volume Muted @ " + new Date(), Toast.LENGTH_LONG).show();
