@@ -73,7 +73,7 @@ public class MuteTimeActivity extends Activity
                 Log.i("MuteTimeActivity", "scheduling alarm to mute/unmute "+ muteTime +", "+ unmuteTime + " with frequency "+ state.frequency);
 
                 AudioManager audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
-                int currentVolume = audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
+                int currentVolume = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
 
                 //create the receiver objects
                 Intent muteIntentAlarm = new Intent(this, MuteReceiver.class);
